@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>cn.lakex</groupId>
+    <artifactId>cat-bom</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <name>cat-bom</name>
+    <description>cat framework for maven dependencies bom</description>
+
+    <properties>
+        <!-- JDK & Maven-Plugin -->
+        <java.version>1.8</java.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
+
+        <!-- Lakex-framework Component -->
+        <framework-core.version>0.0.1-SNAPSHOT</framework-core.version>
+        <framework-io.version>0.0.1-SNAPSHOT</framework-io.version>
+        <framework-error.version>0.0.1-SNAPSHOT</framework-error.version>
+        <framework-validation.version>0.0.1-SNAPSHOT</framework-validation.version>
+        <framework-http.version>0.0.1-SNAPSHOT</framework-http.version>
+        <framework-launcher.version>0.0.1-SNAPSHOT</framework-launcher.version>
+        <framework-orm.version>0.0.1-SNAPSHOT</framework-orm.version>
+        <framework-loging.version>0.0.1-SNAPSHOT</framework-loging.version>
+
+    </properties>
+
+    <!-- 统一管理 Cat 下面的组件 -->
+    <dependencyManagement>
+        <dependencies>
+            <!-- framework Component -->
+            
+
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven-compiler-plugin.version}</version>
+                <inherited>true</inherited>
+                <configuration>
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                    <compilerVersion>${java.version}</compilerVersion>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <!-- 基于 Profiles 的 灵活仓库配置 -->
+    <profiles>
+        <profile>
+            <id>aliyun-rdc</id>
+            <distributionManagement>
+                <repository>
+                    <id>rdc-release</id>
+                    <url>https://packages.aliyun.com/maven/repository/2022255-release-tukFBp/</url>
+                </repository>
+                <snapshotRepository>
+                    <id>rdc-snapshot</id>
+                    <url>https://packages.aliyun.com/maven/repository/2022255-snapshot-Ls0fsC/</url>
+                </snapshotRepository>
+            </distributionManagement>
+        </profile>
+    </profiles>
+</project>

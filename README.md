@@ -1,2 +1,3 @@
-# cat-bom
-this is a simple framework for mocroservies.
+# cat-dependencies
+
+this is a simple framework for microservices.
