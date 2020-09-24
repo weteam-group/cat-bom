@@ -48,7 +48,16 @@
     <dependencyManagement>
         <dependencies>
             <!-- framework Component -->
-            
+            <dependency>
+                <groupId>cn.lakex</groupId>
+                <artifactId>cat-core</artifactId>
+                <version>${framework-core.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.lakex</groupId>
+                <artifactId>cat-validation</artifactId>
+                <version>${framework-validation.version}</version>
+            </dependency>
 
         </dependencies>
     </dependencyManagement>
