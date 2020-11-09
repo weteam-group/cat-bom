@@ -82,17 +82,52 @@
     <!-- 基于 Profiles 的 灵活仓库配置 -->
     <profiles>
         <profile>
-            <id>aliyun-rdc</id>
+            <!-- sxw.cn 私有仓库配置 -->
+            <id>sxw-maven</id>
+            <repositories>
+                <repository>
+                    <id>maven-public</id>
+                    <url>http://nexus.sxw.cn/repository/maven-public/</url>
+                    <releases>
+                        <enabled>true</enabled>
+                        <updatePolicy>always</updatePolicy>
+                    </releases>
+                    <snapshots>
+                        <enabled>true</enabled>
+                        <updatePolicy>always</updatePolicy>
+                    </snapshots>
+                </repository>
+            </repositories>
+            <pluginRepositories>
+                <pluginRepository>
+                    <id>maven-public</id>
+                    <url>http://nexus.sxw.cn/repository/maven-public/</url>
+                </pluginRepository>
+            </pluginRepositories>
+
             <distributionManagement>
                 <repository>
-                    <id>rdc-release</id>
-                    <url>https://packages.aliyun.com/maven/repository/2022255-release-tukFBp/</url>
+                    <id>maven-releases</id>
+                    <url>http://nexus.sxw.cn/repository/maven-releases/</url>
                 </repository>
                 <snapshotRepository>
-                    <id>rdc-snapshot</id>
-                    <url>https://packages.aliyun.com/maven/repository/2022255-snapshot-Ls0fsC/</url>
+                    <id>maven-snapshots</id>
+                    <url>http://nexus.sxw.cn/repository/maven-snapshots/</url>
                 </snapshotRepository>
             </distributionManagement>
         </profile>
+<!--        <profile>-->
+<!--            <id>aliyun-rdc</id>-->
+<!--            <distributionManagement>-->
+<!--                <repository>-->
+<!--                    <id>rdc-release</id>-->
+<!--                    <url>https://packages.aliyun.com/maven/repository/2022255-release-tukFBp/</url>-->
+<!--                </repository>-->
+<!--                <snapshotRepository>-->
+<!--                    <id>rdc-snapshot</id>-->
+<!--                    <url>https://packages.aliyun.com/maven/repository/2022255-snapshot-Ls0fsC/</url>-->
+<!--                </snapshotRepository>-->
+<!--            </distributionManagement>-->
+<!--        </profile>-->
     </profiles>
 </project>
