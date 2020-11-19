@@ -32,7 +32,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
 
-        <!-- Lakex-framework Component -->
+        <!-- Cat-Framework Component -->
         <framework-core.version>0.0.1-SNAPSHOT</framework-core.version>
         <framework-io.version>0.0.1-SNAPSHOT</framework-io.version>
         <framework-error.version>0.0.1-SNAPSHOT</framework-error.version>
@@ -41,6 +41,9 @@
         <framework-launcher.version>0.0.1-SNAPSHOT</framework-launcher.version>
         <framework-orm.version>0.0.1-SNAPSHOT</framework-orm.version>
         <framework-loging.version>0.0.1-SNAPSHOT</framework-loging.version>
+
+        <!-- Cat-Component Plugin -->
+        <component-data-mongodb.version>0.0.1-SNAPSHOT</component-data-mongodb.version>
 
     </properties>
 
@@ -59,6 +62,12 @@
                 <version>${framework-validation.version}</version>
             </dependency>
 
+            <!-- plugin component -->
+            <dependency>
+                <groupId>cn.lakex</groupId>
+                <artifactId>cat-data-mongodb</artifactId>
+                <version>${component-data-mongodb.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
